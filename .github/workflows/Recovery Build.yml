@@ -104,6 +104,7 @@ jobs:
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         git clone https://github.com/adontoo/android_kernel_oneplus_sm8150 -b memeui-12.5/ruby ./kernel/oneplus/sm8150 --depth=1
+        chmod -R 777 ./kernel/oneplus/sm8150/prebuilt/dtc
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Set Swap Space
